@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <li class="logo"> Angel Consultation</li>
+      <li> <a href="#H">Home</a></li>
+      <li><a href="#P">Project</a></li>
+      <li><a href="#A">About</a></li>
+      <li><a href="#C">Client</a></li>
+      <button><a href="#CF">Contact</a></button>
+      <button> <a href="#S">Subscribe</a></button>
+
+<form action="/admin" method="GET">
+    <button type="submit">Go to Admin Page</button>
+  </form>
+
+    </nav>
+  </header>
+
+
+  <div class="homeBlk" id="H">
+    <div class="h1B">
+      <h1 class="headM">Welcome to Our Landing Page</h1>
+      <h1 class="headM">For Client Consultation and Design </h1>
+      <p class="headS">We are dedicated to delivering the best services for our clients.</p>
+      <button class="btn">Get Started</button>
+    </div>
+  </div>
+
+
+<div class="aboutBox" id="A">
+  <h1 class="headM">About Us</h1>
+  <p class="headS">We are a team of professionals committed to excellence in our field. Our mission is to provide
+    top-notch services and solutions to our clients.</p>
+  <p class="headS">With years of experience and a passion for innovation, we strive to exceed expectations and deliver
+    results that matter. Our team is dedicated to understanding your needs and providing tailored solutions that drive
+    success.</p>
+
+  <div class="aboutM">
+    <p class="headS">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:satpalsinghjadhav5@gmail.com">satpalsinghjadhav5@gmail.com</a>
+    </p>
+    <p class="headS">
+      <i class="fas fa-phone"></i>
+      <a href="tel:+917224925007">+91 7224925007</a>
+    </p>
+    <p class="headS">
+      <i class="fab fa-instagram"></i>
+      <a href="https://www.instagram.com/satpal_singh_939" target="_blank">@satpal_singh_939</a>
+    </p>
+    <p class="headS">
+      <i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/satpalsinghjadhav" target="_blank">https://www.linkedin.com/in/satpal-singh-jadhav-ab2875295  </a>
+    </p>
+    <p class="headS">
+      <i class="fas fa-map-marker-alt"></i> Indore [MP]
+    </p>
+  </div>
+
+  <button class="btn">Learn More</button>
+</div>
+
+
+
+  <!-- <div class="container"> -->
+  <h1 class="headM" id="P">Our Projects</h1>
+  <div class="mainBox">
+    <% projects.forEach(p=> { %>
+
+
+      <div class="project">
+        <img src="/uploads/<%= p.image %>" />
+        <h3 class="name">
+          <%= p.name %>
+        </h3>
+        <p>
+          <%= p.description %>
+        </p>
+        <button>Read More</button>
+      </div>
+
+
+      <% }) %>
+
+  </div>
+
+  <h1 class="headM" id="C">Happy Clients</h1>
+
+  <div class="mainBox">
+
+    <% clients.forEach(c=> { %>
+      <div class="client">
+        <img src="/uploads/<%= c.image %>" />
+        <h3 class="name">
+          <%= c.name %>
+        </h3>
+        <h3>
+          <%= c.designation %>
+        </h3>
+        <p>
+          <%= c.description %>
+        </p>
+      </div>
+      <% }) %>
+
+  </div>
+
+  <div class="formBox">
+
+    <h2 class="headM" id="CF">Contact US / Free Consultation :</h2>
+    <form action="/contact" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="mobile" placeholder="Mobile Number" required>
+      <input type="text" name="city" placeholder="City" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+  <footer class="footer1" id="F">
+    <div class="box1">
+
+      <nav>
+        <li class="logo"> Angel Consultation</li>
+        <li> <a href="#H">Home</a></li>
+        <li><a href="#A">About</a></li>
+        <li><a href="#C">Client</a></li>
+        <li><a href="#P">Services</a></li>
+        <li><a href="#CF">Contact</a></li>
+      </nav>
+    </div>
+
+    <div class="subscribeBox" id="S">
+      <div class="boxH">
+        <h2 class="headM">Subscribe : </h2>
+      </div>
+      <form action="/subscribe" method="POST">
+        <div class="boxS">
+          <input type="email" name="email" placeholder="Your Email" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+
+    </div>
+
+  </footer>
+  <!-- </div> -->
+</body>
+
+</html>

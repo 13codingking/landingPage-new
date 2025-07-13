@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <li class="logo"> Angel Consultation</li>
+      <li> <a href="#H">Home</a></li>
+      <li><a href="#P">Add Project</a></li>
+      <li><a href="#A">About</a></li>
+      <li><a href="#C">Add Client</a></li>
+      <li><a href="#CD">Contact Details</a></li>
+      <button> <a href="#E">Subscribe User</a></button>
+
+      <form action="/" method="GET">
+        <button type="submit">Go to Main Page</button>
+      </form>
+
+    </nav>
+  </header>
+
+  <div class="homeBlk" id="H">
+    <div class="h1B">
+      <h1 class="headM">Welcome to Our Admin Page</h1>
+      <h1 class="headM">Add Project and Clients details..</h1>
+      <button class="btn">More..</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="formBox">
+
+      <h2 class="headM" id="P">Add Project</h2>
+      <form action="/admin/project" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="text" name="name" placeholder="Project Name" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <button type="submit">Add Project</button>
+      </form>
+    </div>
+
+    <div class="formBox">
+
+      <h2 class="headM" id="C">Add Client</h2>
+      <form action="/admin/client" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="text" name="name" placeholder="Client Name" required>
+        <input type="text" name="designation" placeholder="Designation" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <button type="submit">Add Client</button>
+      </form>
+    </div>
+
+    <h2 class="headM" id="CD">Contact Form Submissions</h2>
+    <div class="mainBoxA">
+      <% contacts.forEach(c=> { %>
+
+        <div class="detail">
+
+          <p><strong>
+              <%= c.name %>
+            </strong> </p>
+          <p>
+            <%= c.email %>
+          </p>
+          <p>
+            <%= c.mobile %>
+          </p>
+          <p>
+            <%= c.city %>
+          </p>
+        </div>
+
+        <% }) %>
+
+    </div>
+
+    <h2 class="headM" id="E">Subscribe Emails</h2>
+    <div class="mainBoxA">
+
+      <% newsletters.forEach(n=> { %>
+        <div class="detail">
+          <p>
+            <%= n.email %>
+          </p>
+        </div>
+        <% }) %>
+
+    </div>
+
+  </div>
+
+  <div class="aboutBox" id="A">
+    <h1 class="headM">About Us</h1>
+    <p class="headS">We are a team of professionals committed to excellence in our field. Our mission is to provide
+      top-notch services and solutions to our clients.</p>
+    <p class="headS">With years of experience and a passion for innovation, we strive to exceed expectations and deliver
+      results that matter. Our team is dedicated to understanding your needs and providing tailored solutions that drive
+      success.</p>
+
+    <div class="aboutM">
+      <p class="headS">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:satpalsinghjadhav5@gmail.com">satpalsinghjadhav5@gmail.com</a>
+      </p>
+      <p class="headS">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+917224925007">+91 7224925007</a>
+      </p>
+      <p class="headS">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/satpal_singh_939" target="_blank">@satpal_singh_939</a>
+      </p>
+      <p class="headS">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/satpalsinghjadhav"
+          target="_blank">https://www.linkedin.com/in/satpal-singh-jadhav-ab2875295 </a>
+      </p>
+      <p class="headS">
+        <i class="fas fa-map-marker-alt"></i> Indore [MP]
+      </p>
+    </div>
+
+    <button class="btn">Learn More</button>
+  </div>
+
+  <footer class="footer2" id="F">
+    <div class="box1A">
+
+      <nav>
+        <li class="logo"> Angel Consultation</li>
+        <li> <a href="#H">Home</a></li>
+        <li><a href="#P">Add Project</a></li>
+        <li><a href="#A">About</a></li>
+        <li><a href="#C">Add Client</a></li>
+        <li><a href="#CD">Contact Details</a></li>
+      </nav>
+    </div>
+
+    <div class="box2">
+      <p>© 2023 Angel Consultation. All rights reserved.</p>
+      <p>Designed by : Satpal Singh</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
